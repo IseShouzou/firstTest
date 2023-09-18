@@ -33,7 +33,7 @@ window.onload = function(){
 
 	// キャンバスに加速度センサーの各プロパティを表示
 	ctx.font = "24px system";
-	ctx.fillStyle = "#F55";
+	ctx.fillStyle = "#555";
 	ctx.textBaseline = "top";	// 文字のベースラインを上に
 		
 	ctx.fillText("alpha: " + e.alpha, 20,  20);	// z軸
