@@ -14,13 +14,13 @@ window.onload = function(){
 	ctx.fillRect(0, 0, W, H );
 
 	// キャンバスに加速度センサーの各プロパティを表示
-	//ctx.font = "24px system";
-	//ctx.fillStyle = "#F55";
-	//ctx.textBaseline = "top";	// 文字のベースラインを上に
+	ctx.font = "24px system";
+	ctx.fillStyle = "#F55";
+	ctx.textBaseline = "top";	// 文字のベースラインを上に
 		
-	//ctx.fillText("alpha: " + e.alpha, 20,  20);	// z軸
-	//ctx.fillText("beta: "  + e.beta , 20,  60);	// x軸
-	//ctx.fillText("gamma: " + e.gamma, 20, 100);	// y軸
+	ctx.fillText("alpha: " + e.alpha, 20,  20);	// z軸
+	ctx.fillText("beta: "  + e.beta , 20,  60);	// x軸
+	ctx.fillText("gamma: " + e.gamma, 20, 100);	// y軸
 
 	//ctx.fillText("absolute: " + e.absolute, 20, 180);	// 相対値: true 絶対値: false
 
