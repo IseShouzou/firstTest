@@ -67,6 +67,11 @@ window.onload = function(){
 
                         let euler = calcEuler();
                         let Y = euler[1];
+                        
+                        ctx.font = "24px system";
+                        ctx.fillStyle = "#F55";
+                        ctx.textBaseline = "top";
+                        ctx.fillText("phi: " + Y , 20,  20);
 
                         ctx.beginPath();
                         ctx.moveTo( 100, Y + 100 );
