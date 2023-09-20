@@ -24,9 +24,49 @@ window.onload = function(){
 
 	//ctx.fillText("absolute: " + e.absolute, 20, 180);	// 相対値: true 絶対値: false
 
-        let alp = e.alpha;
-        let bet = e.beta;
-        let gam = e.gamma;
+        //let alp = e.alpha;
+        //let bet = e.beta;
+        //let gam = e.gamma;
+
+        let alpRad = ( e.alpha || 0) * Math.PI / 180;
+        let betRad = ( e.beta  || 0) * Math.PI / 180;
+        let gamRad = ( e.gamma || 0) * Math.PI / 180;
+
+        let ca = Math.cos( alpRad );
+        let sa = Math.sin( alpRad );
+        let cb = Math.cos( betRad );
+        let sb = Math.sin( betRad );
+        let cg = Math.cos( gamRad );
+        let sg = Math.sin( gamRad );
+
+
+        //let m11 =   cg * ca - sg * sb * sa ;
+        //let m21 =   cg * sa + sg * sb * ca ;
+        //let m31 = - sg * cb ;
+
+        //let m12 = - cb * sa ;
+        //let m22 =   cb * ca ;
+        //let m32 =   sb      ;
+
+        //let m13 =   sg * ca + cg * sb * sa ;
+        //let m23 =   sg * sa - cg * sb * ca ;
+        //let m33 =   cg * cb ;
+
+        let m11 =   sg * cb ;
+        let m21 =   cg * sa + sg * sb * ca ;
+        let m31 =   cg * ca - sg * sb * sa ;
+
+        let m12 = - sb ;
+        let m22 =   cb * ca ;
+        let m32 = - cb * sa ;
+
+        let m13 = - cg * cb ;
+        let m23 =   sg * sa - cg * sb * ca ;
+        let m33 =   sg * ca + cg * sb * sa ;
+
+        let phi = Math.atan2(   m23, m33 );
+        let the = Math.atan2( - m13, Math.sqrt( m23 * m23 + m33 * m33) );
+        let psi = Math.atan2(   m12, m11 );
 
         //let alp = 100;
         //let bet = -50;
@@ -39,16 +79,15 @@ window.onload = function(){
         ctx.stroke();
 
 	ctx.fillStyle = "#f00";
-	ctx.fillRect( W       / 12.0, H / 2.0, W / 6.0, - alp / 180.0 * H / 2.0 );
+	ctx.fillRect( W       / 12.0, H / 2.0, W / 6.0, - phi / 180.0 * H / 2.0 );
 
 	ctx.fillStyle = "#0f0";
-	ctx.fillRect( W * 5.0 / 12.0, H / 2.0, W / 6.0, - bet / 180.0 * H / 2.0 );
+	ctx.fillRect( W * 5.0 / 12.0, H / 2.0, W / 6.0, - the / 180.0 * H / 2.0 );
 
 	ctx.fillStyle = "#00f";
-	ctx.fillRect( W * 9.0 / 12.0, H / 2.0, W / 6.0, - gam / 180.0 * H / 2.0 );
-
-
+	ctx.fillRect( W * 9.0 / 12.0, H / 2.0, W / 6.0, - psi / 180.0 * H / 2.0 );
 
 	}, false);
+	
 };
 
