@@ -17,16 +17,7 @@ window.onload = function(){
 	ctx.font = "24px system";
 	ctx.fillStyle = "#F55";
 	ctx.textBaseline = "top";	// 文字のベースラインを上に
-		
-	ctx.fillText("alpha: " + e.alpha, 20,  20);	// z軸
-	ctx.fillText("beta: "  + e.beta , 20,  60);	// x軸
-	ctx.fillText("gamma: " + e.gamma, 20, 100);	// y軸
 
-	//ctx.fillText("absolute: " + e.absolute, 20, 180);	// 相対値: true 絶対値: false
-
-        //let alp = e.alpha;
-        //let bet = e.beta;
-        //let gam = e.gamma;
 
         let alpRad = ( e.alpha || 0) * Math.PI / 180;
         let betRad = ( e.beta  || 0) * Math.PI / 180;
@@ -52,6 +43,7 @@ window.onload = function(){
         //let m23 =   sg * sa - cg * sb * ca ;
         //let m33 =   cg * cb ;
 
+
         let m11 =   sg * cb ;
         let m21 =   cg * sa + sg * sb * ca ;
         let m31 =   cg * ca - sg * sb * sa ;
@@ -68,9 +60,9 @@ window.onload = function(){
         let the = Math.atan2( - m13, Math.sqrt( m23 * m23 + m33 * m33) );
         let psi = Math.atan2(   m12, m11 );
 
-        //let alp = 100;
-        //let bet = -50;
-        //let gam = 90;
+	ctx.fillText("phi: " + phi, 20,  20);	// z軸
+	ctx.fillText("the: " + the, 20,  60);	// x軸
+	ctx.fillText("psi: " + psi, 20, 100);	// y軸
 
         ctx.strokeStyle = 'black';
         ctx.beginPath();
