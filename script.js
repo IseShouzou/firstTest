@@ -56,9 +56,9 @@ window.onload = function(){
         let m23 =   sg * sa - cg * sb * ca ;
         let m33 =   sg * ca + cg * sb * sa ;
 
-        let phi = Math.atan2(   m23, m33 );
-        let the = Math.atan2( - m13, Math.sqrt( m23 * m23 + m33 * m33) );
-        let psi = Math.atan2(   m12, m11 );
+        let phi = 180.0 / Math.PI * Math.atan2(   m23, m33 );
+        let the = 180.0 / Math.PI * Math.atan2( - m13, Math.sqrt( m23 * m23 + m33 * m33) );
+        let psi = 180.0 / Math.PI * Math.atan2(   m12, m11 );
 
 	ctx.fillText("phi: " + phi, 20,  20);	// z軸
 	ctx.fillText("the: " + the, 20,  60);	// x軸
