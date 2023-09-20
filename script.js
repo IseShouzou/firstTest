@@ -1,4 +1,3 @@
-
 window.onload = function(){
 
     let canvas = document.getElementById("canvas");
@@ -62,12 +61,14 @@ window.onload = function(){
                         let W = canvas.width;
                         let H = canvas.height;
 
+                        ctx.save();
+
                         ctx.fillStyle = "#ddd";
                         ctx.fillRect(0, 0, W, H );
 
                         let euler = calcEuler();
                         let Y = euler[1];
-                        
+
                         ctx.font = "24px system";
                         ctx.fillStyle = "#F55";
                         ctx.textBaseline = "top";
@@ -93,6 +94,8 @@ window.onload = function(){
                             let y = ( hb - h ) / 2;
                             ctx.drawImage(imageBitmap, 0, y, wb, h, 0, 0 ,W, H );
                         }
+
+                        ctx.restore();
 
                     })
                     .catch( (e) => {} );
