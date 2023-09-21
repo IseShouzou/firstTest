@@ -61,8 +61,12 @@ window.onload = function(){
         let psi = 180.0 / Math.PI * Math.atan2(   m12, m11 );
 
 	ctx.fillText("phi: " + phi, 20,  20);	// z軸
-	ctx.fillText("the: " + the, 20,  60);	// x軸
-	ctx.fillText("psi: " + psi, 20, 100);	// y軸
+	ctx.fillText("the: " + the, 20,  40);	// x軸
+	ctx.fillText("psi: " + psi, 20,  60);	// y軸
+
+	ctx.fillText("alp: " + e.alpha, 20,  80);	// z軸
+	ctx.fillText("bet: " + e.beta , 20, 100);	// x軸
+	ctx.fillText("gam: " + e.gamma, 20, 120);	// y軸
 
         ctx.strokeStyle = 'black';
         ctx.beginPath();
