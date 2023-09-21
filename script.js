@@ -83,6 +83,3 @@ window.onload = function(){
 
 	}, false);
 };
-
-
-
