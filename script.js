@@ -74,14 +74,14 @@ window.onload = function(){
         ctx.lineTo( W, H / 2.0 );
         ctx.stroke();
 
-	ctx.fillStyle = "#f00";
-	ctx.fillRect( W       / 12.0, H / 2.0, W / 6.0, - phi / 180.0 * H / 2.0 );
+	//ctx.fillStyle = "#f00";
+	//ctx.fillRect( W       / 12.0, H / 2.0, W / 6.0, - phi / 180.0 * H / 2.0 );
 
-	ctx.fillStyle = "#0f0";
-	ctx.fillRect( W * 5.0 / 12.0, H / 2.0, W / 6.0, - the / 180.0 * H / 2.0 );
+	//ctx.fillStyle = "#0f0";
+	//ctx.fillRect( W * 5.0 / 12.0, H / 2.0, W / 6.0, - the / 180.0 * H / 2.0 );
 
-	ctx.fillStyle = "#00f";
-	ctx.fillRect( W * 9.0 / 12.0, H / 2.0, W / 6.0, - psi / 180.0 * H / 2.0 );
+	//ctx.fillStyle = "#00f";
+	//ctx.fillRect( W * 9.0 / 12.0, H / 2.0, W / 6.0, - psi / 180.0 * H / 2.0 );
 
 
 
