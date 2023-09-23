@@ -31,30 +31,17 @@ window.onload = function(){
         let sg = Math.sin( gamRad );
 
 
-        //let m11 =   cg * ca - sg * sb * sa ;
-        //let m21 =   cg * sa + sg * sb * ca ;
-        //let m31 = - sg * cb ;
+        let m11 = - ( sg * ca + cg * sb * sa );
+        let m21 =   - cb * sa ;
+        let m31 =   - sg * ca + cg * sb * sa ;
 
-        //let m12 = - cb * sa ;
-        //let m22 =   cb * ca ;
-        //let m32 =   sb      ;
+        let m12 =  - ( cg * sa - sg * sb * ca );;
+        let m22 =      cb * ca ;
+        let m32 =    - sg * sa - cg * sb * ca  ;
 
-        //let m13 =   sg * ca + cg * sb * sa ;
-        //let m23 =   sg * sa - cg * sb * ca ;
-        //let m33 =   cg * cb ;
-
-
-        let m11 =   sg * cb ;
-        let m21 =   cg * sa + sg * sb * ca ;
-        let m31 =   cg * ca - sg * sb * sa ;
-
-        let m12 = - sb ;
-        let m22 =   cb * ca ;
-        let m32 = - cb * sa ;
-
-        let m13 = - cg * cb ;
-        let m23 =   sg * sa - cg * sb * ca ;
-        let m33 =   sg * ca + cg * sb * sa ;
+        let m13 = - sg * cb;
+        let m23 =   sb;
+        let m33 =   cg * cb;
 
         let phi = 180.0 / Math.PI * Math.atan2(   m23, m33 );
         let the = 180.0 / Math.PI * Math.atan2( - m13, Math.sqrt( m23 * m23 + m33 * m33) );
