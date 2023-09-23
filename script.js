@@ -17,16 +17,10 @@ window.onload = function(){
                  [ 0.5,  0.1,   0.1 ],
                  [ 0.5, -0.1,   0.1 ] ];
 
-
     window.addEventListener("deviceorientation", function(e){
-        //alpRad = ( e.alpha || 0) * Math.PI / 180.0;
-        //betRad = ( e.beta  || 0) * Math.PI / 180.0;
-        //gamRad = ( e.gamma || 0) * Math.PI / 180.0;
-
-        alpRad =  20.0 * Math.PI / 180.0;
-        betRad =   0.0 * Math.PI / 180.0;
-        gamRad = 120.0 * Math.PI / 180.0;
-
+        alpRad = ( e.alpha || 0) * Math.PI / 180.0;
+        betRad = ( e.beta  || 0) * Math.PI / 180.0;
+        gamRad = ( e.gamma || 0) * Math.PI / 180.0;
     });
 
     function calcDCM(){
