@@ -12,49 +12,20 @@ window.onload = function(){
 
     let fovy = 45.0;
 
-    //let pnts = [ [ 0.5, -0.5,  0.1 ],
-    //             [ 0.5,  0.5,  0.1 ],
-    //             [ 0.5,  0.5,  0.5 ],
-    //             [ 0.5, -0.5,  0.5 ] ];
-
     let pnts = [ [ 0.5, -0.1,  -0.1 ],
                  [ 0.5,  0.1,  -0.1 ],
                  [ 0.5,  0.1,   0.1 ],
                  [ 0.5, -0.1,   0.1 ] ];
 
 
-    let sliderA = document.getElementById("SliderAlpha");
-    let sliderB = document.getElementById("SliderBeta");
-    let sliderC = document.getElementById("SliderGamma");
-
-
-    sliderA.addEventListener("input", function(e){
-        //console.log( sliderA.value );
-        alpRad =  sliderA.value * Math.PI / 180.0;
-    })
-
-    sliderB.addEventListener("input", function(e){
-        //console.log( sliderB.value );
-        betRad =  sliderB.value * Math.PI / 180.0;
-    })
-
-    sliderC.addEventListener("input", function(e){
-        //console.log( sliderC.value );
-        gamRad =  sliderC.value * Math.PI / 180.0;
-    })
-
     window.addEventListener("deviceorientation", function(e){
         //alpRad = ( e.alpha || 0) * Math.PI / 180.0;
         //betRad = ( e.beta  || 0) * Math.PI / 180.0;
         //gamRad = ( e.gamma || 0) * Math.PI / 180.0;
 
-        //alpRad =  20.0 * Math.PI / 180.0;
-        //betRad =   0.0 * Math.PI / 180.0;
-        //gamRad = 120.0 * Math.PI / 180.0;
-
-        alpRad =  sliderA.value * Math.PI / 180.0;
-        betRad =  sliderB.value * Math.PI / 180.0;
-        gamRad =  sliderC.value * Math.PI / 180.0;
+        alpRad =  20.0 * Math.PI / 180.0;
+        betRad =   0.0 * Math.PI / 180.0;
+        gamRad = 120.0 * Math.PI / 180.0;
 
     });
 
@@ -69,20 +40,20 @@ window.onload = function(){
 
         let m11 = - ( sg * ca + cg * sb * sa );
         let m21 =   - cb * sa ;
-        let m31 =   - sg * ca + cg * sb * sa ;
+        let m31 =     cg * ca - sg * sb * sa ;
 
-        let m12 =  - ( cg * sa - sg * sb * ca );;
+        let m12 =  - ( sg * sa - cg * sb * ca );;
         let m22 =      cb * ca ;
-        let m32 =    - sg * sa - cg * sb * ca  ;
+        let m32 =      cg * sa + sg * sb * ca  ;
 
-        let m13 = - sg * cb;
+        let m13 = - cg * cb;
         let m23 =   sb;
-        let m33 =   cg * cb;
+        let m33 = - sg * cb;
 
         let phi = 180.0 / Math.PI * Math.atan2(   m23, m33 );
         let the = 180.0 / Math.PI * Math.atan2( - m13, Math.sqrt( m23 * m23 + m33 * m33) );
         let psi = 180.0 / Math.PI * Math.atan2(   m12, m11 );
-        //console.log( phi, the, psi );
+        console.log( phi, the, psi );
 
         return [ [ m11, m12, m13 ],
                  [ m21, m22, m23 ],
